@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"classpath:META-INF/spring-config.xml"})
 public class AppSpringTest {
 	
-	@Test
+	@Test 
 	public void testeInsert() {
 		System.out.println("Iniciou o Spring com sucesso !!!");
 	}
