@@ -54,6 +54,21 @@ public class AppSpringTest {
 			System.out.println(usuarioSpringData);
 			System.out.println("====================================================");
 		}
+		
+	}
+	
+	@Test
+	public void testeUpdate() {
+		Optional<UsuarioSpringData> usuario = interfaceSpringDataUser.findById(6L);
+		UsuarioSpringData data = usuario.get();
+		
+		data.setNome("Pelé o rei do futebol");
+		data.setIdade(40);
+		data.setEmail("PeleAemail.com");
+		data.setLogin("pele");
+		data = interfaceSpringDataUser.save(data);
+		
+		System.out.println(data);
 	}
 
 }
