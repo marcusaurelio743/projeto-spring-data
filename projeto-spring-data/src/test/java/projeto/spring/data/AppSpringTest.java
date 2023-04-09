@@ -1,5 +1,8 @@
 package projeto.spring.data;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +34,19 @@ public class AppSpringTest {
 	
 	@Test 
 	public void testeConsulta() {
-		System.out.println("Iniciou o Spring com sucesso !!!");
+		
+		Optional<UsuarioSpringData> usuario = interfaceSpringDataUser.findById(5L);
+		usuario.get();
+		
+		System.out.println(usuario);
+		
+		System.out.println("===============================================");
+		List<UsuarioSpringData> usuarios =  (List<UsuarioSpringData>) interfaceSpringDataUser.findAll();
+		
+		for (UsuarioSpringData usuarioSpringData : usuarios) {
+			
+			System.out.println(usuarioSpringData);
+		}
 	}
 
 }
