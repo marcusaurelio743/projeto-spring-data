@@ -1,5 +1,6 @@
 package projeto.spring.data;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,11 +42,17 @@ public class AppSpringTest {
 		System.out.println(usuario);
 		
 		System.out.println("===============================================");
-		List<UsuarioSpringData> usuarios =  (List<UsuarioSpringData>) interfaceSpringDataUser.findAll();
 		
-		for (UsuarioSpringData usuarioSpringData : usuarios) {
+	}
+	
+	@Test
+	public void consultarTodos() {
+		Iterable<UsuarioSpringData> lista = interfaceSpringDataUser.findAll();
+		
+		for (UsuarioSpringData usuarioSpringData : lista) {
 			
 			System.out.println(usuarioSpringData);
+			System.out.println("====================================================");
 		}
 	}
 
