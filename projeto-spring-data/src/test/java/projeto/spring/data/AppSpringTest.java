@@ -89,5 +89,16 @@ public class AppSpringTest {
 		interfaceSpringDataUser.delete(objeto.get());
 		/*outro jeito de deletar seria usando  interfaceSpringDataUser.deteteById(passando o Id)*/
 	}
+	
+	@Test
+	
+	public void testBuscarporNome() {
+		List<UsuarioSpringData> lista = interfaceSpringDataUser.buscaPorNome("H");
+		
+		for (UsuarioSpringData usuarioSpringData : lista) {
+			System.out.println("=============================");
+			System.out.println(usuarioSpringData);
+		}
+	}
 
 }
