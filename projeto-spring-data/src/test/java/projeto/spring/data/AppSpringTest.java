@@ -33,6 +33,18 @@ public class AppSpringTest {
 		System.out.println("Usuarios cadastrados "+interfaceSpringDataUser.count());
 	}
 	
+	@Test
+	public void teste1insert() {
+		Optional<UsuarioSpringData> usuario = interfaceSpringDataUser.findById(7L);
+		UsuarioSpringData user = usuario.get();
+		user.setIdade(30);
+		user.setNome("Usuario alterado");
+		user = interfaceSpringDataUser.save(user);
+		System.out.println(user);
+	}
+	
+	
+	
 	@Test 
 	public void testeConsulta() {
 		
@@ -69,6 +81,13 @@ public class AppSpringTest {
 		data = interfaceSpringDataUser.save(data);
 		
 		System.out.println(data);
+	}
+	
+	@Test
+	public void testDeletar() {
+		Optional<UsuarioSpringData> objeto = interfaceSpringDataUser.findById(8L);
+		interfaceSpringDataUser.delete(objeto.get());
+		/*outro jeito de deletar seria usando  interfaceSpringDataUser.deteteById(passando o Id)*/
 	}
 
 }
