@@ -100,5 +100,16 @@ public class AppSpringTest {
 			System.out.println(usuarioSpringData);
 		}
 	}
+	
+@Test
+	
+	public void testBuscarporNomeParam() {
+		UsuarioSpringData objeto = interfaceSpringDataUser.buscaPorNomeParam("Helena");
+		
+		
+			System.out.println("=============================");
+			System.out.println(objeto);
+		
+	}
 
 }
