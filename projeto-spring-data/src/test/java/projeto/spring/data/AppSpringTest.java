@@ -27,7 +27,7 @@ public class AppSpringTest {
 		usuario.setIdade(27);
 		usuario.setLogin("Usuario@email.com");
 		usuario.setSenha("admin");
-		usuario.setNome("Pelé");
+		usuario.setNome("Pelé da Silva");
 		
 		 interfaceSpringDataUser.save(usuario);
 		System.out.println("Usuarios cadastrados "+interfaceSpringDataUser.count());
@@ -111,5 +111,12 @@ public class AppSpringTest {
 			System.out.println(objeto);
 		
 	}
+
+@Test
+public void testDeleteporNome() {
+	interfaceSpringDataUser.DeletePorNome("Pelé da Silva");
+	
+	
+}
 
 }
